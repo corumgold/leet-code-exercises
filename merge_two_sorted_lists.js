@@ -15,11 +15,19 @@
 
 var mergeTwoLists = function (list1, list2) {
     debugger
-    for (let i = 0; i < list2.length; i++) {
-        list1.splice(list1.length, 0, list2[i]) 
-    }
-    return list1;
-};
+    let longList = []
+    for (let i = 0; i < list1.length; i++) {
+        let firstArrNum = list1[i];
+        for (let j = 0; j < list2.length; j++) {
+            let secondArrNum = list2[j];
+            if (secondArrNum <= firstArrNum) {
+                list1.splice(i, 0, secondArrNum);
+                list2.splice(0, 1);
+            }
+        }
+        longList = list1;
+    } return longList
+}
 
 mergeTwoLists([1, 2, 4],
     [1, 3, 4])
