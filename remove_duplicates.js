@@ -48,17 +48,14 @@
 // nums is sorted in non-decreasing order.
 
 var removeDuplicates = function (nums) {
-    let k = 1;
-    let removed = 0
+    debugger
+    let k = 0;
     for (let i = 0; i < nums.length; i++) {
-        if (i === 0) continue;
         if (nums[i] === nums[i - 1]) {
-            nums.splice(0, 0, "_");
             nums.splice(i, 1)
-            removed++;
+            i = i - 1;
         } else k++
-    } 
-    nums.splice(0, removed)
+    }
     return k;
 }
 
