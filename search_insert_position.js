@@ -3,7 +3,7 @@
 
 // You must write an algorithm with O(log n) runtime complexity.
 
- 
+
 
 // Example 1:
 // Input: nums = [1,3,5,6], target = 5
@@ -17,6 +17,18 @@
 // Input: nums = [1,3,5,6], target = 7
 // Output: 4
 
-var searchInsert = function(nums, target) {
-    
+var searchInsert = function (nums, target) {
+    debugger;
+    let goodSpot = 0;
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] === target) {
+            return i;
+        }
+        else if (nums[i] < target) {
+            goodSpot = i + 1;
+        }
+    } return goodSpot;
 };
+
+searchInsert([1,3,5,6], 7)
+
