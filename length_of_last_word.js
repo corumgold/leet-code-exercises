@@ -17,7 +17,7 @@
 // Output: 6
 // Explanation: The last word is "joyboy" with length 6.
 
-var lengthOfLastWord = function(s) {
-    
-
+var lengthOfLastWord = function (s) {
+  let sArray = s.trim().split(" ");
+  return sArray[sArray.length - 1].length;
 };
